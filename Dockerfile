@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install upx -y
 
 RUN go mod init douglasavilak/desafioGo
-RUN go install
+RUN go install -ldflags="-s -w" desafioGo.go
 RUN upx --brute ../../bin/desafioGo
 
 ### Stage 2
